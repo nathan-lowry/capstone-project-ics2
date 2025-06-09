@@ -3,13 +3,14 @@
 namespace SpriteKind {
     export const Signpost = SpriteKind.create()
     export const Shop = SpriteKind.create()
+    export const Card = SpriteKind.create()
 }
 // globals
 let playerSprite: Sprite = null
 let inHub = true
 let inBattle = false
 let currentLevel = 1
-let playerHand: string[] = []
+let playerHand: CardSprite[] = []
 // "knight", "bonfire", "crown", "delivery", "joker"
 // classes
 
@@ -18,6 +19,9 @@ class CardSprite extends sprites.ExtendableSprite {
     cost: number
     constructor(image: Image, kind: number, name: string, cost: number) {
         super(image, kind)
+        if (name == "knight") {
+            this.setImage(assets.image`knightImage`)
+        }
     }
 }
 
@@ -41,10 +45,11 @@ function loadHub(): void {
 }
 
 function initializeHand() {
-    
+    let card = new CardSprite(assets.image`blank`, SpriteKind.Card, "knight", 35)
+    playerHand.push(card)
 }
 
-function displayHand(hand: string[]) {
+function displayHand(hand: CardSprite[]) {
     let xPosition = 20
     for (let i = 0; i < hand.length; i++) {
         
