@@ -10,10 +10,20 @@ let inHub = true
 let inBattle = false
 let currentLevel = 1
 let playerHand: string[] = []
+// "knight", "bonfire", "crown", "delivery", "joker"
 // classes
+
+class CardSprite extends sprites.ExtendableSprite {
+    name: string
+    cost: number
+    constructor(image: Image, kind: number, name: string, cost: number) {
+        super(image, kind)
+    }
+}
 
 // functions
 function loadHub(): void {
+    inBattle = false
     inHub = true
     tiles.setCurrentTilemap(tilemap`hub`)
     let playerHolder = tiles.getTilesByType(assets.tile`playerPH`)
@@ -30,17 +40,27 @@ function loadHub(): void {
     tiles.placeOnTile(shopSprite, tiles.getTileLocation(1, 2))
 }
 
+function initializeHand() {
+    
+}
+
+function displayHand(hand: string[]) {
+    let xPosition = 20
+    for (let i = 0; i < hand.length; i++) {
+        
+    }
+}
+
 function loadLevel(levelNumber: number): void {
     inBattle = true
     sprites.destroyAllSpritesOfKind(SpriteKind.Player)
     sprites.destroyAllSpritesOfKind(SpriteKind.Signpost)
     sprites.destroyAllSpritesOfKind(SpriteKind.Shop)
-
-
     if (levelNumber == 1) {
         tiles.setCurrentTilemap(tilemap`blank`)
         scene.setBackgroundColor(13)
     }
+    displayHand(playerHand)
 }
 // event handlers
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Signpost, function(sprite: Sprite, otherSprite: Sprite) {
