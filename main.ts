@@ -7,10 +7,14 @@ namespace SpriteKind {
 // globals
 let playerSprite: Sprite = null
 let inHub = true
+let inBattle = false
+let currentLevel = 1
+let playerHand: string[] = []
 // classes
 
 // functions
 function loadHub(): void {
+    inHub = true
     tiles.setCurrentTilemap(tilemap`hub`)
     let playerHolder = tiles.getTilesByType(assets.tile`playerPH`)
     for (let i = 0; i < playerHolder.length; i++) {
@@ -27,14 +31,24 @@ function loadHub(): void {
 }
 
 function loadLevel(levelNumber: number): void {
-    
+    inBattle = true
+    sprites.destroyAllSpritesOfKind(SpriteKind.Player)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Signpost)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Shop)
+
+
+    if (levelNumber == 1) {
+        tiles.setCurrentTilemap(tilemap`blank`)
+        scene.setBackgroundColor(13)
+    }
 }
 // event handlers
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Signpost, function(sprite: Sprite, otherSprite: Sprite) {
     if (controller.A.isPressed()) {
         if (inHub) {
-            game.splash("yay it worked")
             inHub = false
+            loadLevel(currentLevel)
+
         }
     }
     otherSprite.sayText("Press A to continue", 300)
