@@ -50,7 +50,7 @@ function initializeHand() {
 }
 
 function displayHand(hand: CardSprite[]) {
-    let xPosition = 2
+    let xPosition = 1
     for (let i = 0; i < hand.length; i++) {
         tiles.placeOnTile(hand[i], tiles.getTileLocation(xPosition, 6))
     }
@@ -63,6 +63,7 @@ function loadLevel(levelNumber: number): void {
     sprites.destroyAllSpritesOfKind(SpriteKind.Shop)
     if (levelNumber == 1) {
         tiles.setCurrentTilemap(tilemap`firstLevel`)
+        scene.centerCameraAt(4, 3)
         scene.setBackgroundColor(13)
     }
     displayHand(playerHand)
