@@ -45,14 +45,14 @@ function loadHub(): void {
 }
 
 function initializeHand() {
-    let card = new CardSprite(assets.image`blank`, SpriteKind.Card, "knight", 35)
+    let card = new CardSprite(assets.image`knight`, SpriteKind.Card, "knight", 35)
     playerHand.push(card)
 }
 
 function displayHand(hand: CardSprite[]) {
-    let xPosition = 20
+    let xPosition = 2
     for (let i = 0; i < hand.length; i++) {
-        
+        tiles.placeOnTile(hand[i], tiles.getTileLocation(xPosition, 6))
     }
 }
 
@@ -62,7 +62,7 @@ function loadLevel(levelNumber: number): void {
     sprites.destroyAllSpritesOfKind(SpriteKind.Signpost)
     sprites.destroyAllSpritesOfKind(SpriteKind.Shop)
     if (levelNumber == 1) {
-        tiles.setCurrentTilemap(tilemap`blank`)
+        tiles.setCurrentTilemap(tilemap`firstLevel`)
         scene.setBackgroundColor(13)
     }
     displayHand(playerHand)
@@ -72,6 +72,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Signpost, function(sprite: Sprit
     if (controller.A.isPressed()) {
         if (inHub) {
             inHub = false
+            initializeHand()
             loadLevel(currentLevel)
 
         }
