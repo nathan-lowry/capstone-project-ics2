@@ -5,6 +5,7 @@ namespace SpriteKind {
     export const Shop = SpriteKind.create()
     export const Card = SpriteKind.create()
     export const Cursor = SpriteKind.create()
+    export const Influence = SpriteKind.create()
 }
 // globals
 let playerSprite: Sprite = null
@@ -14,10 +15,12 @@ let currentLevel = 1
 let playerHand: CardSprite[] = []
 let playerDeck: CardSprite[] = []
 let goalInfluence = 100
+let currentInfluence = 0
 let cursorArrayPosition = 0
 let cursorPosition = 1
 let cursor: Sprite = null
-let influenceSprite: Sprite = null
+let firstInfluenceSprite: Sprite = null
+let secondInfluenceSprite: Sprite = null
 // "knight", "bonfire", "crown", "delivery", "joker"
 // classes
 
@@ -60,7 +63,7 @@ function initializeDeck() {
     let card1 = new CardSprite(assets.image`knight`, SpriteKind.Card, "knight", 35)
     card1.x = 1000; card1.y = 1000
     playerDeck.push(card1)
-    let card2 = new CardSprite(assets.image`bonfire`, SpriteKind.Card, "bonfire", 45)
+    let card2 = new CardSprite(assets.image`bonfire`, SpriteKind.Card, "bonfire", 40)
     playerDeck.push(card2)
     card2.x = 1000; card2.y = 1000
     let card3 = new CardSprite(assets.image`crown`, SpriteKind.Card, "crown", 25)
@@ -92,6 +95,17 @@ function displayHand(hand: CardSprite[]) {
     }
 }
 
+function displayInfluence(goal: number, current: number) {
+    sprites.destroyAllSpritesOfKind(SpriteKind.Influence)
+    firstInfluenceSprite = sprites.create(assets.image`influence`, SpriteKind.Influence)
+    tiles.placeOnTile(firstInfluenceSprite, tiles.getTileLocation(2, 1))
+    firstInfluenceSprite.sayText("Goal: " + goal)
+    firstInfluenceSprite = sprites.create(assets.image`influence`, SpriteKind.Influence)
+    tiles.placeOnTile(firstInfluenceSprite, tiles.getTileLocation(7, 1))
+    firstInfluenceSprite.sayText("Current: " + current)
+
+}
+
 function loadLevel(levelNumber: number): void {
     inBattle = true
     sprites.destroyAllSpritesOfKind(SpriteKind.Player)
@@ -107,9 +121,13 @@ function loadLevel(levelNumber: number): void {
     // make cursor
     cursor = sprites.create(assets.image`cursor`, SpriteKind.Cursor)
     tiles.placeOnTile(cursor, tiles.getTileLocation(1, 6))
-    // show influence
-    let influenceSprite = sprites.create(assets.image`influence`, SpriteKind.Player)
-    
+    displayInfluence(goalInfluence, currentInfluence)
+}
+
+function sayEffect(pickedCard: CardSprite) {
+    if (pickedCard.name = "knight") {
+        pickedCard.sayText("")
+    }
 }
 // event handlers
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Signpost, function(sprite: Sprite, otherSprite: Sprite) {
@@ -140,6 +158,13 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         tiles.placeOnTile(cursor, tiles.getTileLocation(cursorPosition, 6))
     }
 
+})
+
+sprites.onOverlap(SpriteKind.Cursor, SpriteKind.Card, function(sprite: Sprite, otherSprite: Sprite) {
+    if (controller.A.isPressed()) {
+
+    }
+    
 })
 // main
 loadHub()

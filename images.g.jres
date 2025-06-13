@@ -14,31 +14,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "shop"
     },
-    "image4": {
-        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfEREREREREREREfEfERERERERER8REfEfERERERHx8REREfEfERERERHxHxEREfEfERERERH//xEREfEfEREREfH/EREREfEfEREREf8fEREREfEfERER8f8REREREfEfERER/x8REREREfEfERHx/xEREREREfEfERH/HxEREREREfEfERH/EREREREREfEfEREREREREREREfH///////////////8=",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "knight"
-    },
-    "image5": {
-        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfERERREQUEREREfEfERFBIiJERBQREfEfERFBIiIiIhQREfEfERFBRCQiIkQREfEfEREREUFEJEQREfEfEUFEREQkIhQREfEfEUEiIiIiIhQREfEfEUFEREQiIhQREfEfERERQSQiIkQREfEfERFBJEJEREQREfEfEREkIkQREREREfEfERFEFBEREREREfEfEREREREREREREfH///////////////8=",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "bonfire"
-    },
-    "image6": {
-        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfEREREREREREREfEfERER/////x8REfEfERHx8RER8R8REfEfEREf8RERHx8REfEfERH/////ER8REfEfEREf8RHxER8REfEfEREf8RHxER8REfEfEREf8RHxER8REfEfEREf8f///x8REfEfEREfHxHxER8REfEfERH/ERHx8REREfEfERH/////HxEREfEfEREREREREREREfH///////////////8=",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "delivery"
-    },
-    "image7": {
-        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfEREREREREREREfEfERERUVVVEREREfEfEREREVFVEREREfEfERERERFREREREfEfERERERFVEREREfEfERERVVVVEREREfEfERERVVVVEREREfEfERERERFVEREREfEfERERERFREREREfEfEREREVFVEREREfEfERERUVVVEREREfEfEREREREREREREfEfEREREREREREREfH///////////////8=",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crown"
-    },
-    "image8": {
-        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfEREREREREREREfEfERER////HxEREfEfERHxERER8REREfEfEREfEREfER8REfEfEREf8RHxER8REfEfEREfERERHx8REfEfEREfERERHx8REfEfEREfERERHx8REfEfEREf8RHxER8REfEfEREfEREfER8REfEfERHxERER8REREfEfERER////HxEREfEfEREREREREREREfH///////////////8=",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "joker"
-    },
     "image9": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -53,6 +28,31 @@
         "data": "hwQQABAAAADd3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3Q==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "influence"
+    },
+    "image4": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfFBQUEREREREREfEfREQUERERER8REfEfERERERHx8REREfEfRBQUERHxHxEREfEfFEQUERH//xEREfEfEREREfH/EREREfEfEREREf8fEREREfEfERER8f8REREREfEfERER/x8REREREfEfERHx/xEREREREfEfERH/HxEREREREfEfERH/EREREREREfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "knight"
+    },
+    "image5": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfRBEREUREFBEREfEfQRERQSIiREQUEfEfREQRQSIiIiIUEfEfERERQUQkIiJEEfEfREERERFBRCREEfEfFEQRREREJCIUEfEfERFBIiIiIiIUEfEfERFBREREIiIUEfEfEREREUEkIiJEEfEfERERQSRCREREEfEfERERJCJEEREREfEfERERRBQREREREfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "bonfire"
+    },
+    "image6": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfRBQREREREREREfEfERER/////x8REfEfQRHx8RER8R8REfEfFBQf8RERHx8REfEfQRH/////ER8REfEfEREf8RHxER8REfEfEREf8RHxER8REfEfEREf8RHxER8REfEfEREf8f///x8REfEfEREfHxHxER8REfEfERH/ERHx8REREfEfERH/////HxEREfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "delivery"
+    },
+    "image7": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfFEQREREREREREfEfREERUVVVEREREfEfEREREVFVEREREfEfREERERFREREREfEfFEQRERFVEREREfEfERERVVVVEREREfEfERERVVVVEREREfEfERERERFVEREREfEfERERERFREREREfEfEREREVFVEREREfEfERERUVVVEREREfEfEREREREREREREfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "crown"
+    },
+    "image8": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfFEQREREREREREfEfREEREf///x8REfEfERER8REREfEREfEfREERHxERHxEfEfEfFEQRH/ER8REfEfEfERERHxERER8fEfEfERERHxERER8fEfEfERERHxERER8fEfEfERERH/ER8REfEfEfERERHxERHxEfEfEfERER8REREfEREfEfEREREf///x8REfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "joker"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
