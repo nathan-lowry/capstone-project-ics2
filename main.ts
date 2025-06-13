@@ -1,5 +1,6 @@
-// not done
-// there's a good chance that this ends up being too ambitious and I won't have enough time
+// for some reason, its reading all the cards name attributes as knight
+// i dont know why so i kinda just gave up
+// there's still something here tho at least
 namespace SpriteKind {
     export const Signpost = SpriteKind.create()
     export const Shop = SpriteKind.create()
