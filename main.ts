@@ -11,6 +11,7 @@ let inHub = true
 let inBattle = false
 let currentLevel = 1
 let playerHand: CardSprite[] = []
+let playerDeck: CardSprite[] = []
 // "knight", "bonfire", "crown", "delivery", "joker"
 // classes
 
@@ -19,9 +20,7 @@ class CardSprite extends sprites.ExtendableSprite {
     cost: number
     constructor(image: Image, kind: number, name: string, cost: number) {
         super(image, kind)
-        if (name == "knight") {
-            this.setImage(assets.image`knightImage`)
-        }
+        
     }
 }
 
@@ -44,15 +43,32 @@ function loadHub(): void {
     tiles.placeOnTile(shopSprite, tiles.getTileLocation(1, 2))
 }
 
-function initializeHand() {
-    let card = new CardSprite(assets.image`knight`, SpriteKind.Card, "knight", 35)
-    playerHand.push(card)
+function shuffleDeck() {
+    
+}
+
+function initializeDeck() {
+    let card1 = new CardSprite(assets.image`knight`, SpriteKind.Card, "knight", 35)
+    playerDeck.push(card1)
+    let card2 = new CardSprite(assets.image`bonfire`, SpriteKind.Card, "bonfire", 45)
+    playerDeck.push(card2)
+    let card3 = new CardSprite(assets.image`crown`, SpriteKind.Card, "crown", 25)
+    playerDeck.push(card3)
+    let card4 = new CardSprite(assets.image`delivery`, SpriteKind.Card, "delivery", 10)
+    playerDeck.push(card4)
+    let card5 = new CardSprite(assets.image`joker`, SpriteKind.Card, "joker", 20)
+    playerDeck.push(card5)
+}
+
+function drawHand(number_of_cards: number) {
+
 }
 
 function displayHand(hand: CardSprite[]) {
     let xPosition = 1
     for (let i = 0; i < hand.length; i++) {
         tiles.placeOnTile(hand[i], tiles.getTileLocation(xPosition, 6))
+        xPosition += 2
     }
 }
 
@@ -66,6 +82,7 @@ function loadLevel(levelNumber: number): void {
         scene.centerCameraAt(4, 3)
         scene.setBackgroundColor(13)
     }
+    drawHand(3)
     displayHand(playerHand)
 }
 // event handlers
@@ -73,7 +90,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Signpost, function(sprite: Sprit
     if (controller.A.isPressed()) {
         if (inHub) {
             inHub = false
-            initializeHand()
+            initializeDeck()
             loadLevel(currentLevel)
 
         }

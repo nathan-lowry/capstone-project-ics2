@@ -19,6 +19,31 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "knight"
     },
+    "image5": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfERERREQUEREREfEfERFBIiJERBQREfEfERFBIiIiIhQREfEfERFBRCQiIkQREfEfEREREUFEJEQREfEfEUFEREQkIhQREfEfEUEiIiIiIhQREfEfEUFEREQiIhQREfEfERERQSQiIkQREfEfERFBJEJEREQREfEfEREkIkQREREREfEfERFEFBEREREREfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "bonfire"
+    },
+    "image6": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfEREREREREREREfEfERER/////x8REfEfERHx8RER8R8REfEfEREf8RERHx8REfEfERH/////ER8REfEfEREf8RHxER8REfEfEREf8RHxER8REfEfEREf8RHxER8REfEfEREf8f///x8REfEfEREfHxHxER8REfEfERH/ERHx8REREfEfERH/////HxEREfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "delivery"
+    },
+    "image7": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfEREREREREREREfEfERERUVVVEREREfEfEREREVFVEREREfEfERERERFREREREfEfERERERFVEREREfEfERERVVVVEREREfEfERERVVVVEREREfEfERERERFVEREREfEfERERERFREREREfEfEREREVFVEREREfEfERERUVVVEREREfEfEREREREREREREfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "crown"
+    },
+    "image8": {
+        "data": "hwQQABgAAAD///////////////8fEREREREREREREfEfEREREREREREREfEfERER////HxEREfEfERHxERER8REREfEfEREfEREfER8REfEfEREf8RHxER8REfEfEREfERERHx8REfEfEREfERERHx8REfEfEREfERERHx8REfEfEREf8RHxER8REfEfEREfEREfER8REfEfERHxERER8REREfEfERER////HxEREfEfEREREREREREREfH///////////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "joker"
+    },
+    "image9": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "knightImage"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
