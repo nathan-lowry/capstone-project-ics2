@@ -4,6 +4,7 @@ namespace SpriteKind {
     export const Signpost = SpriteKind.create()
     export const Shop = SpriteKind.create()
     export const Card = SpriteKind.create()
+    export const Cursor = SpriteKind.create()
 }
 // globals
 let playerSprite: Sprite = null
@@ -12,6 +13,7 @@ let inBattle = false
 let currentLevel = 1
 let playerHand: CardSprite[] = []
 let playerDeck: CardSprite[] = []
+let goalInfluence = 100
 // "knight", "bonfire", "crown", "delivery", "joker"
 // classes
 
@@ -44,24 +46,38 @@ function loadHub(): void {
 }
 
 function shuffleDeck() {
-    
+    for (let i = playerDeck.length - 1; i >= 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [playerDeck[i], playerDeck[j]] = [playerDeck[j], playerDeck[i]]
+    }
 }
 
 function initializeDeck() {
     let card1 = new CardSprite(assets.image`knight`, SpriteKind.Card, "knight", 35)
+    card1.x = 1000; card1.y = 1000
     playerDeck.push(card1)
     let card2 = new CardSprite(assets.image`bonfire`, SpriteKind.Card, "bonfire", 45)
     playerDeck.push(card2)
+    card2.x = 1000; card2.y = 1000
     let card3 = new CardSprite(assets.image`crown`, SpriteKind.Card, "crown", 25)
     playerDeck.push(card3)
+    card3.x = 1000; card3.y = 1000
     let card4 = new CardSprite(assets.image`delivery`, SpriteKind.Card, "delivery", 10)
     playerDeck.push(card4)
+    card4.x = 1000; card4.y = 1000
     let card5 = new CardSprite(assets.image`joker`, SpriteKind.Card, "joker", 20)
     playerDeck.push(card5)
+    card5.x = 1000; card5.y = 1000
+    shuffleDeck()
 }
 
 function drawHand(number_of_cards: number) {
-
+    for (let i = 0; i < number_of_cards; i++) {
+        playerHand.push(playerDeck[i])
+        playerDeck.splice(i, 1)
+        console.log(playerHand.length)
+        console.log(playerDeck.length)
+    }
 }
 
 function displayHand(hand: CardSprite[]) {
@@ -84,6 +100,9 @@ function loadLevel(levelNumber: number): void {
     }
     drawHand(3)
     displayHand(playerHand)
+    // make cursor
+    let cursor = sprites.create(assets.image`cursor`, SpriteKind.Cursor)
+    tiles.placeOnTile(cursor, tiles.getTileLocation(1, 6))
 }
 // event handlers
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Signpost, function(sprite: Sprite, otherSprite: Sprite) {

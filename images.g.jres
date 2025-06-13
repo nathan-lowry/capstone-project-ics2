@@ -44,6 +44,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "knightImage"
     },
+    "image10": {
+        "data": "hwQQABgAAABVVVVVVVVVVVVVVVVVAAAAAAAAAAAAAFUFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFAFAAAAAAAAAAAAAFBVAAAAAAAAAAAAAFVVVVVVVVVVVVVVVVU=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "cursor"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
