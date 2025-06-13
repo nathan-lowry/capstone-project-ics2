@@ -65,6 +65,7 @@ function initializeDeck() {
     playerDeck.push(card1)
     let card2 = new CardSprite(assets.image`bonfire`, SpriteKind.Card, "bonfire", 40)
     playerDeck.push(card2)
+    console.log(card2.name)
     card2.x = 1000; card2.y = 1000
     let card3 = new CardSprite(assets.image`crown`, SpriteKind.Card, "crown", 25)
     playerDeck.push(card3)
@@ -82,8 +83,6 @@ function drawHand(number_of_cards: number) {
     for (let i = 0; i < number_of_cards; i++) {
         playerHand.push(playerDeck[i])
         playerDeck.splice(i, 1)
-        console.log(playerHand.length)
-        console.log(playerDeck.length)
     }
 }
 
@@ -125,8 +124,12 @@ function loadLevel(levelNumber: number): void {
 }
 
 function sayEffect(pickedCard: CardSprite) {
+    //console.log(pickedCard.name)
     if (pickedCard.name = "knight") {
-        pickedCard.sayText("")
+        //console.log(pickedCard.name)
+        pickedCard.sayText("Gain 45 influence", 100)
+    } else if (pickedCard.name = "bonfire") {
+        pickedCard.sayText("Gain 20 influence per board spot", 100)
     }
 }
 // event handlers
@@ -160,11 +163,11 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 
 })
 
-sprites.onOverlap(SpriteKind.Cursor, SpriteKind.Card, function(sprite: Sprite, otherSprite: Sprite) {
+sprites.onOverlap(SpriteKind.Cursor, SpriteKind.Card, function(sprite: Sprite, otherSprite: CardSprite) {
     if (controller.A.isPressed()) {
 
     }
-    
+    sayEffect(otherSprite)
 })
 // main
 loadHub()
