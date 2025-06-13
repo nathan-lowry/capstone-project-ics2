@@ -14,6 +14,10 @@ let currentLevel = 1
 let playerHand: CardSprite[] = []
 let playerDeck: CardSprite[] = []
 let goalInfluence = 100
+let cursorArrayPosition = 0
+let cursorPosition = 1
+let cursor: Sprite = null
+let influenceSprite: Sprite = null
 // "knight", "bonfire", "crown", "delivery", "joker"
 // classes
 
@@ -101,8 +105,11 @@ function loadLevel(levelNumber: number): void {
     drawHand(3)
     displayHand(playerHand)
     // make cursor
-    let cursor = sprites.create(assets.image`cursor`, SpriteKind.Cursor)
+    cursor = sprites.create(assets.image`cursor`, SpriteKind.Cursor)
     tiles.placeOnTile(cursor, tiles.getTileLocation(1, 6))
+    // show influence
+    let influenceSprite = sprites.create(assets.image`influence`, SpriteKind.Player)
+    
 }
 // event handlers
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Signpost, function(sprite: Sprite, otherSprite: Sprite) {
@@ -115,6 +122,24 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Signpost, function(sprite: Sprit
         }
     }
     otherSprite.sayText("Press A to continue", 300)
+})
+
+controller.right.onEvent(ControllerButtonEvent.Pressed, function() {
+    if (inBattle) {
+        cursorPosition += 2
+        cursorArrayPosition += 1
+        tiles.placeOnTile(cursor, tiles.getTileLocation(cursorPosition, 6))
+    }
+
+})
+
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (inBattle) {
+        cursorPosition += -2
+        cursorArrayPosition += -1
+        tiles.placeOnTile(cursor, tiles.getTileLocation(cursorPosition, 6))
+    }
+
 })
 // main
 loadHub()
